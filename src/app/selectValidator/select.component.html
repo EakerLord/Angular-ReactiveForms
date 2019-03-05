@@ -1,0 +1,14 @@
+<div style="background-color: lightgrey; width: 30%; border-radius: 5px; padding-left: 15px;">
+  <form [formGroup]="baseForm" (ngSubmit)="OnSubmit()">
+    <span>Ingrese su nombre:  </span>
+    <!-- <input type="text" formControlName="select"> -->
+    <select formControlName="select">
+      <option [value]="cargo" *ngFor="let cargo of cargos">{{cargo}}</option>
+    </select>
+    <div *ngIf="(baseForm.value.select != 'Junior' && baseForm.value.select != 'Semi-Senior') && baseForm.dirty">
+      <br><span class="mensajeError">Valor erroneo, intente nuevamente.</span><br>
+    </div>
+    <br>
+    <!-- <span>El valor ingresado fue: {{baseForm.value.select}}</span> -->
+  </form>
+</div>

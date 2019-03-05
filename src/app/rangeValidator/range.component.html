@@ -1,0 +1,9 @@
+<div style="background-color: lightgrey; width: 30%; border-radius: 5px; padding-left: 15px;">
+  <span>Ingrese su altura: </span>
+  <input type="text" [formControl]="form">
+  <div *ngIf="baseForm.invalid && baseForm.dirty && baseForm.touched">
+    <br><span class="mensajeError">Valor erroneo, intente nuevamente.</span><br>
+  </div>
+  <br>
+  <!-- <span>El valor ingresado fue: {{form.value}}</span> -->
+</div>

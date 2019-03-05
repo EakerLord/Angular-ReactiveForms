@@ -1,0 +1,11 @@
+<div style="background-color: lightgrey; width: 30%; border-radius: 5px; padding-left: 15px;">
+  <form [formGroup]="baseForm" (ngSubmit)="OnSubmit()">
+    <span>Ingrese su Cuil:  </span>
+    <input type="text" formControlName="cuil">
+    <div *ngIf="baseForm.invalid && baseForm.dirty && baseForm.touched">
+      <br><span class="mensajeError">Valor erroneo, intente nuevamente.</span><br>
+    </div>
+    <br>
+    <!-- <span>El valor ingresado fue: {{baseForm.value.cuil}}</span> -->
+  </form>
+</div>
